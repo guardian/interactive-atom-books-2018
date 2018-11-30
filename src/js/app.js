@@ -2,6 +2,7 @@ import xr from 'xr'
 import blocksTemplate from '../templates/blocks.html'
 import Mustache from 'mustache'
 
+
 // load the docs data
 xr.get('https://interactive.guim.co.uk/docsdata-test/1ZKNpWWWzvJv_0oD8z3k24p1YGAQVPr2eT58D21cdzgE.json').then((resp) => {
     var sheets = resp.data.sheets;
@@ -82,6 +83,24 @@ xr.get('https://interactive.guim.co.uk/docsdata-test/1ZKNpWWWzvJv_0oD8z3k24p1YGA
         menu.classList.remove('sticky');
       }
     });
+
+    // add little 'read more' buttons
+    var subsections = document.querySelectorAll('div.copy.desc');
+    subsections.forEach(function(subsection) {
+      var button = document.createElement('p');
+      button.classList.add('button-wrapper');
+      button.innerHTML = '<div class="little-read-more">Read more</div>';
+      
+      var elBefore = subsection.querySelector('p:nth-child(2)');
+      subsection.insertBefore(button, elBefore);
+      
+      subsection.classList.add('short');
+      
+      var littleReadMore = button.querySelector('.little-read-more');
+      littleReadMore.addEventListener('click', function() {
+        subsection.classList.remove('short');
+      })
+    })
 
     setTimeout(function(){
 			wantsVideo.getsVideo();

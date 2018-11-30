@@ -2,6 +2,7 @@ import xr from 'xr'
 import blocksTemplate from '../templates/blocks.html'
 import Mustache from 'mustache'
 
+
 var el = document.createElement('script');
 el.src = '<%= path %>/app.js';
 document.body.appendChild(el);
