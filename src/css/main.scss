@@ -14,6 +14,23 @@ $grey: #DCDCDC; // Uncomment for embeds
   margin: 0 !important;
 }
 
+
+@keyframes animateTree {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+
+}
+
 body {
   overflow: hidden;
   font-family: "Guardian Headline Regular", Georgia, serif;
@@ -159,7 +176,7 @@ h1 {
     width: auto;
   }
   
-  height: 387px;
+  height: 420px;
 
   @include mq(mobileLandscape) {
     height: 440px;
@@ -247,6 +264,22 @@ h1 {
     @include mq(wide) {
       // height: 400px;
       height: 440px;
+    }
+  }
+  
+  img {
+    animation: animateTree 2s infinite;
+    &.state-a {
+      animation-delay: 0s;
+    }
+    &.state-b {
+      animation-delay: 0.5s;
+    }
+    &.state-c {
+      animation-delay: 1s;
+    }
+    &.state-d {
+      animation-delay: 1.5s;
     }
   }
 
