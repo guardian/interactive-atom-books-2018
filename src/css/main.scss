@@ -147,55 +147,76 @@ h1 {
 }
 //header
 
+.aligned-image-wrapper {
+  position: relative;
+  height: 440px;
+  img {
+    transform: translateX(-52%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    height: 100%;
+    width: auto;
+  }
+  
+  @include mq(tablet) {
+    height: 480px;
+  }
+
+  @include mq(desktop) {
+    height: 540px;
+  }
+
+  @include mq(wide) {
+    height: 720px;
+  }
+  
+  
+  // base is 1613
+  &.s-979 {
+    height: 267px;
+    
+    @include mq(tablet) {
+      height: 291px;
+    }
+
+    @include mq(desktop) {
+      height: 328px;
+    }
+
+    @include mq(wide) {
+      height: 437px;
+    }
+  }
+
+  &.s-896 {
+    height: 245px;
+    
+    @include mq(tablet) {
+      height: 267px;
+    }
+
+    @include mq(desktop) {
+      height: 300px;
+    }
+
+    @include mq(wide) {
+      height: 400px;
+    }
+  }
+
+}
+
 .where-to-go-header {
   &--image {
-    min-height: 480px;
     width: 100%;
     background-size: 100%;
     background-position: center;
-    position: relative;
     background-repeat: no-repeat;
     overflow: hidden;
-    height: 95vh;
-    @include mq($from: mobileLandscape) {
-      background-size: cover;
-      background-position: center center;
-    }
+    
 
-    .video {
-      position: absolute;
-      top: 40%;
-      left: 50%;
-      width: auto;
-      height: auto;
-      z-index: 0;
-      -ms-transform: translateX(-50%) translateY(-50%);
-      -moz-transform: translateX(-50%) translateY(-50%);
-      -webkit-transform: translateX(-50%) translateY(-50%);
-      transform: translateX(-50%) translateY(-50%);
-
-      video {
-        object-fit: cover;
-      }
-    }
-
-    .video-image {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      z-index: -1;
-      -ms-transform: translateX(-50%) translateY(-50%);
-      -moz-transform: translateX(-50%) translateY(-50%);
-      -webkit-transform: translateX(-50%) translateY(-50%);
-      transform: translateX(-50%) translateY(-50%);
-      @include mq($from: mobileLandscape) {
-        left:50%;
-      }
-    }
   }
 
   &--standfirst {
@@ -295,20 +316,17 @@ h1 {
   }
 
   &--title {
-    width: 100%;
+    width: 75%;
     position: absolute;
     z-index: 20000;
-    bottom: 0;
-    margin-bottom: 12px;
+    top: 0;
 
-    @include mq(620px) {
-      padding-left: 60px;
-    }
     @include mq(tablet) {
       padding-left: 20px;
       margin-bottom: 32px;
     }
     @include mq($from: desktop) {
+      top: auto;
       bottom: 0;
       padding-left: 0;
     }
@@ -339,10 +357,10 @@ h1 {
     h1 {
       color: white;
       @include mq(tablet) {
-        max-width: 510px;
+        max-width: 370px;
       }
       @include mq($from: desktop) {
-        max-width: 620px;
+        max-width: 470px;
         }
     }
 
@@ -512,53 +530,52 @@ h1 {
 
 .section-header {
   &--image {
-    overflow: hidden;
-    min-height: 600px;
-    background-color: #333;
+    background-color: #b8bae0;
     position: relative;
     @include mq($from: desktop) {
       min-width: 500px;
     }
-    @include mq($from: leftCol) {
-      min-height: 650px;
-    }
-    @include mq($from: wide) {
-      min-height: 750px;
-    };
+    // @include mq($from: leftCol) {
+    //   min-height: 650px;
+    // }
+    // @include mq($from: wide) {
+    //   min-height: 750px;
+    // };
 
-    img {
-        position: absolute;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        object-position: center;
-      @include mq($from: phablet) {
-        width: auto;
-        height: 100%;
-        margin-left: 0;
-        display: block;
-      }
-      @include mq($from: tablet) {
-        width: 1000px;
-        height: auto;
-      }
-      @include mq($from: desktop) {
-        width: 100%;
-        height: auto;
-      }
+    // img {
+    //     position: absolute;
+    //     object-fit: cover;
+    //     width: 100%;
+    //     height: 100%;
+    //     object-position: center;
+    //   @include mq($from: phablet) {
+    //     width: auto;
+    //     height: 100%;
+    //     margin-left: 0;
+    //     display: block;
+    //   }
+    //   @include mq($from: tablet) {
+    //     width: 1000px;
+    //     height: auto;
+    //   }
+    //   @include mq($from: desktop) {
+    //     width: 100%;
+    //     height: auto;
+    //   }
+    // 
+    //   &.bottom {
+    //     @include mq($from:leftCol) {
+    //       bottom: -50px;
+    //     }
+    //   }
+    // 
+    //   &.top {
+    //     @include mq($from:leftCol) {
+    //       top: -50px;
+    //     }
+    //   }
+    // }
 
-      &.bottom {
-        @include mq($from:leftCol) {
-          bottom: -50px;
-        }
-      }
-
-      &.top {
-        @include mq($from:leftCol) {
-          top: -50px;
-        }
-      }
-    }
     .people-image {
 
     }
@@ -575,8 +592,9 @@ h1 {
   }
 
   &--title {
-    position: absolute;
-    bottom: 0;
+    &--wrapper {
+      position: relative;
+    }
     width: 100%;
     z-index: 2000;
     border-bottom: solid 1px #777;
@@ -735,12 +753,12 @@ h1 {
         display: inline-block;
         background-color: $mediumGold;
         color: #fff;
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
         border-radius: 100%;
         margin-right: 4px;
         text-align: center;
-        line-height: 20px;
+        line-height: 17px;
         font-weight: 200;
         font-size: 20px;
       }
