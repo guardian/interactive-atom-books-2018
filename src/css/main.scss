@@ -149,7 +149,6 @@ h1 {
 
 .aligned-image-wrapper {
   position: relative;
-  height: 440px;
   img {
     transform: translateX(-52%);
     position: absolute;
@@ -160,6 +159,12 @@ h1 {
     width: auto;
   }
   
+  height: 387px;
+
+  @include mq(mobileLandscape) {
+    height: 440px;
+  }
+
   @include mq(tablet) {
     height: 480px;
   }
@@ -180,8 +185,12 @@ h1 {
   
   // base is 1613
   &.s-979 {
-    height: 267px;
+    height: 235px;
     
+    @include mq(mobileLandscape) {
+      height: 267px;
+    }
+
     @include mq(tablet) {
       height: 291px;
     }
@@ -198,8 +207,12 @@ h1 {
   }
 
   &.s-916 {
-    height: 250px;
+    height: 220px;
     
+    @include mq(mobileLandscape) {
+      height: 250px;
+    }
+
     @include mq(tablet) {
       height: 273px;
     }
@@ -216,8 +229,12 @@ h1 {
   }
   
   &.s-896 {
-    height: 245px;
+    height: 216px;
     
+    @include mq(mobileLandscape) {
+      height: 245px;
+    }
+
     @include mq(tablet) {
       height: 267px;
     }
