@@ -165,11 +165,16 @@ h1 {
   }
 
   @include mq(desktop) {
-    height: 540px;
+    // height: 540px;
+    height: 594px; // * 1.1
+    img {
+      transform: translateX(-48%);
+    }
   }
 
   @include mq(wide) {
-    height: 720px;
+    // height: 720px;
+    height: 792px; // * 1.1
   }
   
   
@@ -182,14 +187,34 @@ h1 {
     }
 
     @include mq(desktop) {
-      height: 328px;
+      // height: 328px;
+      height: 361px;
     }
 
     @include mq(wide) {
-      height: 437px;
+      // height: 437px;
+      height: 481px; 
     }
   }
 
+  &.s-916 {
+    height: 250px;
+    
+    @include mq(tablet) {
+      height: 273px;
+    }
+
+    @include mq(desktop) {
+      // height: 307px;
+      height: 338px;
+    }
+
+    @include mq(wide) {
+      // height: 409px;
+      height: 450px;
+    }
+  }
+  
   &.s-896 {
     height: 245px;
     
@@ -198,11 +223,13 @@ h1 {
     }
 
     @include mq(desktop) {
-      height: 300px;
+      // height: 300px;
+      height: 330px;
     }
 
     @include mq(wide) {
-      height: 400px;
+      // height: 400px;
+      height: 440px;
     }
   }
 
@@ -215,6 +242,8 @@ h1 {
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    margin-top: -140px;
+    z-index: -1;
     
 
   }
