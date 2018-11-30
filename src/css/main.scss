@@ -44,23 +44,23 @@ body {
 img[data-lazy-img] {
   width: auto;
 
-  &.inView {
-    animation-delay: 0.5s;
-    animation: fadeIn;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-  }
+  // &.inView {
+  //   animation-delay: 0.5s;
+  //   animation: fadeIn;
+  //   animation-duration: 0.5s;
+  //   animation-fill-mode: forwards;
+  //   animation-iteration-count: 1;
+  // }
 }
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
+// @keyframes fadeIn {
+//   0% {
+//     opacity: 0;
+//   }
+// 
+//   100% {
+//     opacity: 1;
+//   }
+// }
 
 .interactive-blocks {
   background-color: #fff;
@@ -167,7 +167,7 @@ h1 {
 .aligned-image-wrapper {
   position: relative;
   img {
-    transform: translateX(-52%);
+    transform: translateX(-54%);
     position: absolute;
     top: 0;
     bottom: 0;
@@ -176,19 +176,20 @@ h1 {
     width: auto;
   }
   
-  height: 420px;
+  // height: 420px;
+  height: 609px;
 
   @include mq(mobileLandscape) {
-    height: 440px;
+    height: 585px;
   }
 
   @include mq(tablet) {
-    height: 480px;
+    height: 552px;
   }
 
   @include mq(desktop) {
     // height: 540px;
-    height: 594px; // * 1.1
+    height: 653px;
     img {
       transform: translateX(-48%);
     }
@@ -196,90 +197,96 @@ h1 {
 
   @include mq(wide) {
     // height: 720px;
-    height: 792px; // * 1.1
+    height: 831px; // * 1.1
   }
   
   
   // base is 1613
   &.s-979 {
-    height: 235px;
+    // height: 235px;
+    height: 341px;
     
     @include mq(mobileLandscape) {
-      height: 267px;
+      height: 355px;
     }
 
     @include mq(tablet) {
-      height: 291px;
+      height: 335px;
     }
 
     @include mq(desktop) {
       // height: 328px;
-      height: 361px;
+      height: 397px;
     }
 
     @include mq(wide) {
       // height: 437px;
-      height: 481px; 
+      height: 505px; 
     }
   }
 
   &.s-916 {
-    height: 220px;
+    // height: 220px;
+    height: 319px;
     
     @include mq(mobileLandscape) {
-      height: 250px;
+      height: 332px;
     }
 
     @include mq(tablet) {
-      height: 273px;
+      height: 314px;
     }
 
     @include mq(desktop) {
       // height: 307px;
-      height: 338px;
+      height: 372px;
     }
 
     @include mq(wide) {
       // height: 409px;
-      height: 450px;
+      height: 472px;
     }
   }
   
   &.s-896 {
-    height: 216px;
+    // height: 216px;
+    height: 313px;
     
     @include mq(mobileLandscape) {
-      height: 245px;
+      height: 326px;
     }
 
     @include mq(tablet) {
-      height: 267px;
+      height: 307px;
     }
 
     @include mq(desktop) {
       // height: 300px;
-      height: 330px;
+      height: 363px;
     }
 
     @include mq(wide) {
       // height: 400px;
-      height: 440px;
+      height: 462px;
     }
   }
   
-  img {
-    animation: animateTree 2s infinite;
-    &.state-a {
-      animation-delay: 0s;
-    }
-    &.state-b {
-      animation-delay: 0.5s;
-    }
-    &.state-c {
-      animation-delay: 1s;
-    }
-    &.state-d {
-      animation-delay: 1.5s;
+  
+  &.animated {
+    img {
+      animation: animateTree 2s infinite;
+      &.state-a {
+        animation-delay: 0s;
+      }
+      &.state-b {
+        animation-delay: 0.5s;
+      }
+      &.state-c {
+        animation-delay: 1s;
+      }
+      &.state-d {
+        animation-delay: 1.5s;
+      }
     }
   }
 

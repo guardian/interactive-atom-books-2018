@@ -56,8 +56,6 @@ xr.get('https://interactive.guim.co.uk/docsdata-test/1ZKNpWWWzvJv_0oD8z3k24p1YGA
     for(var i = 0; i < n.length; i++) {
       if(imagesToBeLoaded(n[i])){
         debounce(imageInView(n[i], n), 250);
-      }else{
-        console.log('not to be loaded');
       }
     }
     //open correct section
@@ -100,7 +98,37 @@ xr.get('https://interactive.guim.co.uk/docsdata-test/1ZKNpWWWzvJv_0oD8z3k24p1YGA
       littleReadMore.addEventListener('click', function() {
         subsection.classList.remove('short');
       })
+    });
+    
+    
+    var treeImages = document.querySelectorAll('.aligned-image-wrapper img');
+    treeImages.forEach(function(i) {
+      i.setAttribute('src', i.getAttribute('data-will-animate'));
+      i.addEventListener('load', function() {
+        i.classList.add('done-loading');
+        var allImages = document.querySelectorAll('img[data-will-animate]').length;
+        var loadedImages = document.querySelectorAll('img[data-will-animate].done-loading').length;
+        if (allImages==loadedImages) {
+          console.log('going on', loadedImages, 'out of', allImages)
+          var alignedWrappers = document.querySelectorAll('.aligned-image-wrapper');
+          alignedWrappers.forEach(function(alignedWrapper) {
+            console.log(alignedWrapper)
+            alignedWrapper.classList.add('animated');
+          })
+        } else {
+          console.log('going on', loadedImages, 'out of', allImages)
+        }
+      })
     })
+    
+    // setTimeout(function() {
+    //   // animate images all at the same time
+    //   var treeWrappers = document.querySelectorAll('.aligned-image-wrapper');
+    //   treeWrappers.forEach(function(treeWrapper) {
+    //     console.log(treeWrapper);
+    //     treeWrapper.classList.add('animated');
+    //   })
+    // }, 1000);
 
     setTimeout(function(){
 			wantsVideo.getsVideo();
